@@ -10,15 +10,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_10_06_190313) do
+ActiveRecord::Schema.define(version: 2019_10_12_045040) do
 
   create_table "bills", force: :cascade do |t|
     t.string "company"
     t.integer "amount"
     t.integer "account_number"
-    t.boolean "recurring?", default: false
+    t.boolean "recurring", default: false
     t.string "url"
-    t.boolean "paid?", default: false
+    t.boolean "paid", default: false
     t.string "category"
     t.date "due_date"
     t.integer "household_id", null: false
@@ -74,6 +74,8 @@ ActiveRecord::Schema.define(version: 2019_10_06_190313) do
     t.boolean "completed", default: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "frequency"
+    t.boolean "recurring", default: false
     t.index ["household_id"], name: "index_tasks_on_household_id"
   end
 
