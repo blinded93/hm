@@ -4,9 +4,9 @@ class CreateBills < ActiveRecord::Migration[6.0]
       t.string :company
       t.integer :amount
       t.integer :account_number
-      t.boolean :recurring?, default: false
+      t.boolean :recurring, default: false
       t.string :url
-      t.boolean :paid?, default: false
+      t.boolean :paid, default: false
       t.string :category
       t.date :due_date
       t.references :household, null: false, foreign_key: true, index: true

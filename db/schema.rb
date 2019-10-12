@@ -71,7 +71,7 @@ ActiveRecord::Schema.define(version: 2019_10_06_190313) do
     t.string "name"
     t.integer "household_id", null: false
     t.date "due_date"
-    t.boolean "completed?", default: false
+    t.boolean "completed", default: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["household_id"], name: "index_tasks_on_household_id"
