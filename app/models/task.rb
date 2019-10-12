@@ -5,7 +5,6 @@ class Task < ApplicationRecord
 
   default_scope { order(due_date: :desc) }
   scope :over_due, -> { where('due_date < ?', Date.today) }
-  
   scope :completed, -> { where(completed?: true) }
 
   def not_in_past
