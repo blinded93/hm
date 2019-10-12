@@ -3,6 +3,8 @@ class Household < ApplicationRecord
 
   has_many :bills, dependent: :destroy
   has_many :bills, dependent: :destroy
+  has_many :lists
+  has_many :tasks
   
   serialize :members, Array
   
